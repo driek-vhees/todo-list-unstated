@@ -11,7 +11,7 @@ function App() {
         <Subscribe to={[TodoContainer]}>
           {todo => (
             <React.Fragment>
-              <TodoForm addTodo={(title) => todo.addTodo(title)} />
+              <TodoForm addTodo={title => todo.addTodo(title)} />
               <TodoList todos={todo.state.todos} toggleTodo={id => todo.toggleTodo(id)} />
             </React.Fragment>
           )}
