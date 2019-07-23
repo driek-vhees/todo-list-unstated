@@ -7,6 +7,7 @@ import TodoForm from './components/TodoForm';
 function App() {
   return (
     <div className="App">
+      <h1>My TODOs</h1>
       <Provider>
         <Subscribe to={[TodoContainer]}>
           {todo => (
