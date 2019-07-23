@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TodoDetails = ({ onClick, todo: { completed, title } }) => (
-  <li onClick={onClick} className={completed ? 'complete' : 'incomplete'}>
+  <li onClick={onClick} onKeyDown={onClick} role="menuitem" className={completed ? 'complete' : 'incomplete'}>
     <input type="checkbox" value={1} readOnly checked={completed} />
     {title}
   </li>
@@ -13,7 +13,7 @@ TodoDetails.propTypes = {
   todo: PropTypes.shape({
     completed: PropTypes.bool.isRequired,
     title: PropTypes.string.isRequired,
-  }),
+  }).isRequired,
 };
 
 export default TodoDetails;
